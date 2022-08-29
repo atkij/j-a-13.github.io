@@ -36,9 +36,9 @@ To convert a two's complement number from binary to decimal simply write out the
 
 | -128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| 1 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
+| `1` | `0` | `0` | `0` | `1` | `0` | `0` | `0` |
 
--128 + 32 = -120
+`-128 + 32 = -120`
 
 #### Min and Max Limits
 
