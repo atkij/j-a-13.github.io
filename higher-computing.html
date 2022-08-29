@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Joel Atkinson" />
+  <title>Higher Computing</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Higher Computing</h1>
+<p class="author">Joel Atkinson</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#computer-systems">Computer Systems</a>
+<ul>
+<li><a href="#data-representation">Data Representation</a>
+<ul>
+<li><a href="#twos-complement">Two’s Complement</a></li>
+<li><a href="#floating-point-representation">Floating Point Representation</a></li>
+<li><a href="#storing-text">Storing Text</a></li>
+<li><a href="#graphics">Graphics</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="computer-systems">Computer Systems</h1>
+<h2 id="data-representation">Data Representation</h2>
+<h3 id="twos-complement">Two’s Complement</h3>
+<p>The two’s complement system is a method used by the computer for storing negative binary numbers.</p>
+<h4 id="decimal-to-binary">Decimal to Binary</h4>
+<p>To create the binary of -120 there are 3 steps</p>
+<ol type="1">
+<li><p>Convert the positive number into binary</p>
+<p><code>0111 1000 (120)</code></p></li>
+<li><p>Invert all the bits (0’s to 1’s and 1’s to 0’s)</p>
+<p><code>1000 0111</code></p></li>
+<li><p>Add 1 to the right of the number (Least Significant Bit)</p>
+<pre><code> 1000 0111
++0000 0001
+=1000 1000</code></pre></li>
+</ol>
+<h4 id="binary-to-decimal">Binary to Decimal</h4>
+<p>To convert a two’s complement number from binary to decimal simply write out the column headers except with the most significant bit as negative then add up the numbers with a 1.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">-128</th>
+<th style="text-align: center;">64</th>
+<th style="text-align: center;">32</th>
+<th style="text-align: center;">16</th>
+<th style="text-align: center;">8</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p>-128 + 32 = -120</p>
+<h4 id="min-and-max-limits">Min and Max Limits</h4>
+<p>To calculate the maximum number that can be stored using the two’s complement system, use the following formula: (2<sup>n-1</sup>)-1 And to calculate the minimum: -2<sup>n-1</sup></p>
+<h3 id="floating-point-representation">Floating Point Representation</h3>
+<h4 id="binary-fractions">Binary fractions</h4>
+<p>To store binary fractions we simply add extra column headers by dividing by 2 after the decimal point.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">128</th>
+<th style="text-align: center;">64</th>
+<th style="text-align: center;">32</th>
+<th style="text-align: center;">16</th>
+<th style="text-align: center;">8</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">.</th>
+<th style="text-align: center;">0.5</th>
+<th style="text-align: center;">0.25</th>
+<th style="text-align: center;">0.125</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">2<sup>7</sup></td>
+<td style="text-align: center;">2<sup>6</sup></td>
+<td style="text-align: center;">2<sup>5</sup></td>
+<td style="text-align: center;">2<sup>4</sup></td>
+<td style="text-align: center;">2<sup>3</sup></td>
+<td style="text-align: center;">2<sup>2</sup></td>
+<td style="text-align: center;">2<sup>1</sup></td>
+<td style="text-align: center;">2<sup>0</sup></td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">2<sup>-1</sup></td>
+<td style="text-align: center;">2<sup>-2</sup></td>
+<td style="text-align: center;">2<sup>-3</sup></td>
+</tr>
+</tbody>
+</table>
+<p>To convert a fixed point binary to decimal, we just add up the column headers as before.</p>
+<p>Because the coputer can’t store decimal points in binary, we have to use floating point representation to store real numbers.</p>
+<h4 id="storing-floating-point-numbers">Storing Floating Point Numbers</h4>
+<p>A floating point number is split up into 3 parts - the sign, the mantissa and the exponent. The sign determines whether it is a negative number or not (1 for a negative and 0 for positive just as in two’s complement). The mantissa is the whole number without the decimal point. This is left-aligned and padded with 0’s. The exponent is used to tell the computer the position of the decimal point in the mantissa. This right aligned and padded with 0’s at the start.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Sign</th>
+<th style="text-align: center;">Mantissa</th>
+<th style="text-align: center;">Exponent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">24 bits =</td>
+<td style="text-align: center;">1 bit</td>
+<td style="text-align: center;">15 bits</td>
+<td style="text-align: center;">8 bits</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">32 bits =</td>
+<td style="text-align: center;">1 bit</td>
+<td style="text-align: center;">23 bits</td>
+<td style="text-align: center;">8 bits</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">64 bits =</td>
+<td style="text-align: center;">1 bit</td>
+<td style="text-align: center;">52 bits</td>
+<td style="text-align: center;">11 bits</td>
+</tr>
+</tbody>
+</table>
+<h4 id="converting-real-numbers-to-fixed-point-binary">Converting Real Numbers to Fixed Point Binary</h4>
+<p>To convert a real number like 250.03125 to fixed point binary you must:</p>
+<ol type="1">
+<li><p>Convert the first part of the number into binary (before the decimal point)</p>
+<pre><code>250.03125
+250 = 1111 1010</code></pre></li>
+<li><p>Convert the second part of the number into binary by multiplying until it equals 1</p>
+<pre><code>0.03125 * 2 = 0r0.0625  |
+0.0625  * 2 = 0r0.125   |
+0.125   * 2 = 0r0.25    |
+0.25    * 2 = 0r0.5     |
+0.5     * 2 = 1r0       v  = 0.00001</code></pre></li>
+<li><p>Now join the two parts together to get:</p>
+<p><code>11111010.00001</code></p></li>
+</ol>
+<h4 id="converting-fixed-point-binary-to-floating-point">Converting Fixed Point Binary to Floating Point</h4>
+<p>We start with a fixed point binary number such as 11.001011 to convert to 24 bit floating point representation:</p>
+<ol type="1">
+<li><p>We first move the decimal out of the number to the left and pad to the left to form the mantissa</p>
+<pre><code>11.001011
+⤾⤾
+110010110000000</code></pre></li>
+<li><p>We then convert the number of spaces the decimal point moved to form the exponent</p>
+<p><code>It moved 2 spaces so the exponent is 00000010</code></p></li>
+<li><p>We then choose the sign and fill out the table</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Sign</th>
+<th style="text-align: center;">Mantissa</th>
+<th style="text-align: center;">Exponent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">110010110000000</td>
+<td style="text-align: center;">00000010</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+<p>If the number is a small number (below 0) then the decimal point must be moved to the left so that it is in front of the first 1. Because the decimal point has been moved the opposite direction, then it will be a negative number and must be stored using the two’s complement system.</p>
+<h4 id="bit-allocation">Bit Allocation</h4>
+<p>The higher the number of bits stored in the mantissa, the higher the precision of the number. The more numbers after the decimal point, the greater the precision.</p>
+<p>Increasing the exponent increases the range of numbers that can be stored as the decimal point can be moved more places to the right and left.</p>
+<p>Single precision is a 32 bit floating point number (1 bit sign, 23 bits mantissa, 8 bits exponent) and double precision is 64 bits (1 bit sign, 52 bits mantissa, 11 bits exponent).</p>
+<h3 id="storing-text">Storing Text</h3>
+<h4 id="ascii">ASCII</h4>
+<p>ASCII is a method of storing text digitally. Each letter on a keyboard has it’s own ASCII code which was originally stored with 7 bits but was increased to 8 bits to store more characters for more languages and symbols (known as extended ASCII). ASCII stands for the American Standard Code for Information Interchange.</p>
+<p>The first 32 codes are known as control codes which cannot be printed such as backspace, delete and escape.</p>
+<p>A character set is the term for a certain way of storing text on a computer. There are lots of different character sets for different languages. ASCII is one character set and Unicode is another.</p>
+<h4 id="unicode">Unicode</h4>
+<p>The problem with ASCII is that there wasn’t enough space to store every letter of every language’s alphabet. Unicode was invented to fix this by using more bits so it could store more letters and symbols.</p>
+<p>Unicode is known as UTF-8, UTF-16 and UTF-32, storing 8, 16, 32 bits for each character.</p>
+<p>The first 128 values of Unicode are the same as ASCII and then goes up to 137,439 characters!</p>
+<h3 id="graphics">Graphics</h3>
+<h4 id="vector-graphics">Vector Graphics</h4>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Advantages</th>
+<th style="text-align: left;">Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Do not lose quality when scaled</td>
+<td style="text-align: left;">Cannot be edited at pixel level</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Require less storage space</td>
+<td style="text-align: left;">Cannot show photo realistic scenes easily</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Objects are easily moved/manipulated</td>
+<td style="text-align: left;">Will usually require special applications to open</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Resolution independent</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="bitmapped-graphics">Bitmapped Graphics</h4>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Advantages</th>
+<th style="text-align: left;">Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Can edit down to the individual pixel</td>
+<td style="text-align: left;">Have a very large file size as every pixel is stored</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adding extra detail to the pixture does no increase the file size</td>
+<td style="text-align: left;">When scaled larger, pictures pizelate as they are resolution dependent</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Can create photo realistic images</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
