@@ -111,13 +111,13 @@ We start with a fixed point binary number such as 11.001011 to convert to 24 bit
 
 2. We then convert the number of spaces the decimal point moved to form the exponent
 
-	`It moved 2 spaces so the exponent is 00000010`
+	It moved 2 spaces so the exponent is `00000010`
 
 3. We then choose the sign and fill out the table
 
 	| Sign | Mantissa | Exponent |
 	|:-:|:-:|:-:|
-	| 0 | 110010110000000 | 00000010 |
+	| `0` | `110010110000000` | `00000010` |
 
 If the number is a small number (below 0) then the decimal point must be moved to the left so that it is in front of the first 1.  Because the decimal point has been moved the opposite direction, then it will be a negative number and must be stored using the two's complement system.
 
