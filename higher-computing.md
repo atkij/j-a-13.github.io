@@ -173,8 +173,11 @@ The first 128 values of Unicode are the same as ASCII and then goes up to 137,43
 In 1945, Von Neumann proposed a computer architecture consisting of 4 different parts:
 
  - CA - Central Arithmetic Logic Unit
+
  - CC - Central Control Unit
+
  - Memory
+
  - Input and Output channels
 
 ```
@@ -212,8 +215,11 @@ Von Neumann also came up with the Stored Program Concept.  This means that all i
 The fetch=execute cycle is a series of steps that the processor follows to execute an instruction.
 
 1. The memory address of the next instruction is placed on the address bus
+
 2. The read line is activated
+
 3. The instruction is transferred to the processor on the data bus
+
 4. The instruction is then decoded and executed
 
 ### Memory Write Operation
@@ -221,10 +227,15 @@ The fetch=execute cycle is a series of steps that the processor follows to execu
 To write data to memory the processor follows these steps.
 
 1. Set up the MAR (Memory Address Register) with the address to be written to
+
 2. Set up the MDR (Memory Data Register) with the data to be written
+
 3. The address bus is then set up with the address to be written to from the MAR
+
 4. The data is copied from the MDR to the data bus
+
 5. The write control line is activated
+
 6. Data on the data bus is then placed in the specified memory address
 
 ### Memory Read Operation
@@ -232,10 +243,15 @@ To write data to memory the processor follows these steps.
 To read data from memory the processor follows these steps.
 
 1. Place the address to be read from in the MAR (Memory Address Register)
+
 2. The address bus is then set up with th address from the MAR
+
 3. The read control line is activated
+
 4. The data bus is set up with data to be read
+
 5. The data from the data bus is then placed in the MDR (Memory Data Register)
+
 6. Data is then decoded and executed
 
 ### The Processor
@@ -330,6 +346,7 @@ Increasing the width of the address bus allows more memory to be addressed as th
 There are two main types of RAM (Random Access Memory).
 
  - Static RAM (SRAM)
+
  - Dynamic RAM (DRAM)
 
 #### DRAM
@@ -345,8 +362,11 @@ Static RAM is usually reserved for cache memory as it is very fast, but also muc
 There are 4 main factors that can affect the performance of a computer.
 
  - Number of processor cores
+
  - Clock speed
+
  - Width of the data bus
+
  - Cache memory
 
 #### Number of Processor Cores
@@ -371,6 +391,40 @@ Increasing the cache memory increases the performance because more memory can be
 
 ## Enviornmental Impacts
 
+Smart computer systems are being developed to help fight climate change.  Theses systems will help reduce toxic emissions and use of electricity or gas.
+
+### Smart Heating Systems
+
+Smart heating systems help control the heating and turn it off when it's not needed.
+
+ - Activity sensors help the system learn when you want the heating to be on or off
+
+ - Activity sensors also help adjust the heating in rooms if there's unusual activity in the house - perhaps if you're off work one day
+
+ - The system can also read the weather forecast to adjust the heating in advance to warm up or cool down the house
+
+ - Remote control apps allow you to control the heating system remotely so you can turn it on and off when you're not at home
+
+Because the system can automatically turn the heating off when you're not at home, this has a positive impact on the enviornment because energy isn't being to used to unecessarily heat the house.
+
+### Traffic Control Systems
+
+Traffic control systems help manage the traffic in a city to reduce waiting times and impact on the enviornment.
+
+ - Adaptive traffic signals adjust timngs of their green light cycles to match the current amount of traffic.  They continuously collect data about the approaching vehicles to adjust their timings
+
+ - Intelligent routing systems share data about different areas - like slow areas, traffic jams and road closures - and helps reduce traffic jams because of incidents, reducing toxic emissions as cars don't have to wait.
+
+This has a positive impact on the enviornment because it reduces waiting time in queues for cars so less energy is wasted.
+
+### Car Management Systems
+
+Car management systems help to reduce toxic emissions from cars by smartly controlling the car.
+
+ - Start-stop systems turn the engine off when waiting at lights or in queues, reducing fuel consumption and emissions.
+
+ - Engine control units (ECU's) use sensors to alter the engine's air to fuel ratio to optimise fuel consumption, hence reducing carbon dioxide emissions.
+
 ## Security Risks and Precautions
 
 ### Computer Misuse Act
@@ -389,11 +443,85 @@ In 1985 two hackers gained access to the email of Prince Phillip.  Back then the
 
 	Modification of data on a computer system without permission - planting viruses, deleting or modifying user's files.
 
-## Encryption
+### Tracking Cookies
+
+Tracking cookies are a type of cookie which are used to identify users.  If the cookie exists, then customized websites can sometimes be made as the user can be identified as the cookie is sent to the webserver whenever you go to visit that site.
+
+Tracking cookies may not seem important, but they do allow personal information to stored and exchanged between different websites to provide targetted advertisements to get you to buy stuff.
+
+### DOS Attacks
+
+A Denial of Service (DOS) attack is when an attempt to bring an online service/website offline by flooding the server so it can't do anything else.
+
+#### Symptons of a DOS Attack
+
+ - The server may have very poor performance
+
+ - Users may be unable to access it
+
+ - The server may crash
+
+#### Effects of a DOS Attack
+
+A Denial of Service attack will cause a lot of disruption to a company in many different ways.
+
+ - Customers may not be able to access the company's website
+
+ - Employees may be unable to work as the servers will be down
+
+ - Depending on how long the servers are offline, the company could lose out on a lot of business
+
+#### Costs of a DOS Attack
+
+There will be some costs with a Denial of Service attack depending on the size and length.
+
+ - Lost revenue due to downtime
+
+ - Determining the nature of the attack
+
+ - The payment for specialists to repair the servers after the attack
+
+ - Payment for cyber securtiy experts to iplement safeguards to prevent further attacks
+
+ - Additional admin to compensate for loss of network services
+
+#### Types of DOS Attacks
+
+There are many different types of Denial of Service attacks that attack the server in different ways.
+
+ - Physical Attacks:
+
+	A physical attack is when you physically cut the wires to a server or damage it so it can't function.  Physical attacks can also be performed by attacking other parts of a server infrastructure such as network routing.
+
+ - Bandwidth Consumption:
+
+	This is probably the most common type of Denial of Service attack and is where the attacker floods the server with requests and packets of information to use up all the available band width so no other data can be sent to and from the server.
+
+ - Resource Starvation:
+
+	Because a server doesn't have unlimited resources, the attacker will try to use up all the processing time, memory, and storage by continuously creating new accounts or spamming an email server so it uses up all it's space to store emails.  This will cause the server to stop functioning properly as it can't store anymore data or process anything else.
+
+ - DNS Attack:
+
+	Whenever a url is entered into a web browser, the browser makes a request to a DNS server (Domain Name Service) to find out the IP address of that website.  If an attacker was to attack a DNS server then the browser wouldn't be able to find out the company's IP address, so the users would be unable to visit their website.  An attacker may want to hack the DNS server to replace the IP address of the company's server with their own IP address to re-route all network requests to the company's server to their own.
+
+#### Reasons of a DNS Attack
+
+ - Financial - blackmail, competitive (disrupting business competition), hired to hack the server
+
+ - Political - you don't agree with the other's side's views
+
+ - Personal - you hold a grudge against a former employee, etc
+
+#### Distrobuted DOS
+
+A Distributed Denial of Service is when the attacker uses a network of computers sometimes known as a botnet or a zombie army.  The users of the computers participating in the attack may be unaware that they have a virus helping a DDOS attack. 
+
+### Encryption
 
 Encryption is when data is transformed into another form so that it is unreadable.  Data must be encrypted and decrypted with a key.
 
-### Symmetric Encryption
+#### Symmetric Encryption
 
 Symmetric encryption is when both parties have the same secret key and that key is used to both encrypt and decrypt the data.
 
@@ -402,7 +530,7 @@ Symmetric encryption is when both parties have the same secret key and that key 
 | The key doesn't have to be sent with a message | The key has to be known by the receiver before transission |
 | The system is simpler and faster | If the key is compromised, then intercepted messages can be decyphered |
 
-### Asymmetric Encryption
+#### Asymmetric Encryption
 
 Asymmetric encryption is where two keys exist.  The public key and the private key.  The public key can only decrypt messages sent by the private key and the private key can only decrypt messages sent by the public key because both keys are linked mathematically using very large prime numbers.
 
@@ -446,7 +574,9 @@ The public key is made publicly available to everyone while the private key is k
 A digital certificate is the digital equivalent of a passport or a driving license - they are used to prove that it's really you.  Digital certificates are issued by a certification authority and contain the following information:
 
  - Public key
+
  - Owner's name
+
  - Expiration date and issuer
 
 ### Digital Signatures
@@ -456,12 +586,59 @@ A digital signature is a method of proving that a message has not been modified 
 #### Sending a Signature
 
 1. You obtain a message hash (a unique mathematical summary of the message)
+
 2. You encrypt the message hash with your private key
+
 3. This signature is then attached to the message
 
 #### Receiving a Signature
 
 1. You hash the received message
+
 2. You decrypt the sent message hash
+
 3. You then compare both the message hashes and if they are the same, then the message is authentic
 
+```
++----------+
+|          |
+|  Sender  |
+|          |
++----------+
+
++------------+
+|            |
+|  Document  |
+|            |
++------------+
+    |
+    |    +----------------+
+    |--->| Hash algorithm |---+
+    |    +----------------+   |
+    |                         v
+    |                   +------------+    +-------------+
+    |<------------------| Encryption |<---| Private key |
+    |                   +------------+    +-------------+
+    |
+    |
+    |-----------------------+
+    |                       |
+    |                       v
++----------------+    +------------+    +------------+
+| Hash algorithm |    | Decryption |<---| Public key |
++----------------+    +------------+    +------------+
+    |                       | 
+    |                       |
+    v                       v
++---------------------------------+
+|                                 |
+|  If both hash's are equal then  |
+|    the document is authentic    |
+|                                 |
++---------------------------------+
++------------+
+|            |
+|  Receiver  |
+|            |
++------------+
+```

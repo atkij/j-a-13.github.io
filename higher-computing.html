@@ -43,15 +43,18 @@
 <li><a href="#ram">RAM</a></li>
 <li><a href="#factors-affecting-performance">Factors Affecting Performance</a></li>
 </ul></li>
-<li><a href="#enviornmental-impacts">Enviornmental Impacts</a></li>
+<li><a href="#enviornmental-impacts">Enviornmental Impacts</a>
+<ul>
+<li><a href="#smart-heating-systems">Smart Heating Systems</a></li>
+<li><a href="#traffic-control-systems">Traffic Control Systems</a></li>
+<li><a href="#car-management-systems">Car Management Systems</a></li>
+</ul></li>
 <li><a href="#security-risks-and-precautions">Security Risks and Precautions</a>
 <ul>
 <li><a href="#computer-misuse-act">Computer Misuse Act</a></li>
-</ul></li>
-<li><a href="#encryption">Encryption</a>
-<ul>
-<li><a href="#symmetric-encryption">Symmetric Encryption</a></li>
-<li><a href="#asymmetric-encryption">Asymmetric Encryption</a></li>
+<li><a href="#tracking-cookies">Tracking Cookies</a></li>
+<li><a href="#dos-attacks">DOS Attacks</a></li>
+<li><a href="#encryption">Encryption</a></li>
 <li><a href="#digital-certificates">Digital Certificates</a></li>
 <li><a href="#digital-signatures">Digital Signatures</a></li>
 </ul></li>
@@ -295,10 +298,10 @@
 <h3 id="von-neumann-architechture">Von Neumann Architechture</h3>
 <p>In 1945, Von Neumann proposed a computer architecture consisting of 4 different parts:</p>
 <ul>
-<li>CA - Central Arithmetic Logic Unit</li>
-<li>CC - Central Control Unit</li>
-<li>Memory</li>
-<li>Input and Output channels</li>
+<li><p>CA - Central Arithmetic Logic Unit</p></li>
+<li><p>CC - Central Control Unit</p></li>
+<li><p>Memory</p></li>
+<li><p>Input and Output channels</p></li>
 </ul>
 <pre><code>+-------------------+
 |                   |
@@ -328,30 +331,30 @@
 <h3 id="fetch-execute-cycle">Fetch-Execute Cycle</h3>
 <p>The fetch=execute cycle is a series of steps that the processor follows to execute an instruction.</p>
 <ol type="1">
-<li>The memory address of the next instruction is placed on the address bus</li>
-<li>The read line is activated</li>
-<li>The instruction is transferred to the processor on the data bus</li>
-<li>The instruction is then decoded and executed</li>
+<li><p>The memory address of the next instruction is placed on the address bus</p></li>
+<li><p>The read line is activated</p></li>
+<li><p>The instruction is transferred to the processor on the data bus</p></li>
+<li><p>The instruction is then decoded and executed</p></li>
 </ol>
 <h3 id="memory-write-operation">Memory Write Operation</h3>
 <p>To write data to memory the processor follows these steps.</p>
 <ol type="1">
-<li>Set up the MAR (Memory Address Register) with the address to be written to</li>
-<li>Set up the MDR (Memory Data Register) with the data to be written</li>
-<li>The address bus is then set up with the address to be written to from the MAR</li>
-<li>The data is copied from the MDR to the data bus</li>
-<li>The write control line is activated</li>
-<li>Data on the data bus is then placed in the specified memory address</li>
+<li><p>Set up the MAR (Memory Address Register) with the address to be written to</p></li>
+<li><p>Set up the MDR (Memory Data Register) with the data to be written</p></li>
+<li><p>The address bus is then set up with the address to be written to from the MAR</p></li>
+<li><p>The data is copied from the MDR to the data bus</p></li>
+<li><p>The write control line is activated</p></li>
+<li><p>Data on the data bus is then placed in the specified memory address</p></li>
 </ol>
 <h3 id="memory-read-operation">Memory Read Operation</h3>
 <p>To read data from memory the processor follows these steps.</p>
 <ol type="1">
-<li>Place the address to be read from in the MAR (Memory Address Register)</li>
-<li>The address bus is then set up with th address from the MAR</li>
-<li>The read control line is activated</li>
-<li>The data bus is set up with data to be read</li>
-<li>The data from the data bus is then placed in the MDR (Memory Data Register)</li>
-<li>Data is then decoded and executed</li>
+<li><p>Place the address to be read from in the MAR (Memory Address Register)</p></li>
+<li><p>The address bus is then set up with th address from the MAR</p></li>
+<li><p>The read control line is activated</p></li>
+<li><p>The data bus is set up with data to be read</p></li>
+<li><p>The data from the data bus is then placed in the MDR (Memory Data Register)</p></li>
+<li><p>Data is then decoded and executed</p></li>
 </ol>
 <h3 id="the-processor">The Processor</h3>
 <p>The processor is the main part of a computer. It is the part that performs the instructions required for the computer to function.</p>
@@ -460,8 +463,8 @@
 <h3 id="ram">RAM</h3>
 <p>There are two main types of RAM (Random Access Memory).</p>
 <ul>
-<li>Static RAM (SRAM)</li>
-<li>Dynamic RAM (DRAM)</li>
+<li><p>Static RAM (SRAM)</p></li>
+<li><p>Dynamic RAM (DRAM)</p></li>
 </ul>
 <h4 id="dram">DRAM</h4>
 <p>Dynamic RAM is the main memory used in the computer and needs to be refreshed constantly. DRAM is volatile, so if the computer is turned off, then the data in memory will be lost. It is used more widely as it is less expensive than SRAM.</p>
@@ -470,10 +473,10 @@
 <h3 id="factors-affecting-performance">Factors Affecting Performance</h3>
 <p>There are 4 main factors that can affect the performance of a computer.</p>
 <ul>
-<li>Number of processor cores</li>
-<li>Clock speed</li>
-<li>Width of the data bus</li>
-<li>Cache memory</li>
+<li><p>Number of processor cores</p></li>
+<li><p>Clock speed</p></li>
+<li><p>Width of the data bus</p></li>
+<li><p>Cache memory</p></li>
 </ul>
 <h4 id="number-of-processor-cores">Number of Processor Cores</h4>
 <p>Processors can have multiple processor units (cores) inside the processor. Each core can execute it’s own individual programs.</p>
@@ -486,6 +489,29 @@
 <h4 id="cache-memory">Cache Memory</h4>
 <p>Increasing the cache memory increases the performance because more memory can be stored for faster access so less trips to memory are required. Instructions like a loop will be stored in SRAM as they will be frequently accessed as they repeat.</p>
 <h2 id="enviornmental-impacts">Enviornmental Impacts</h2>
+<p>Smart computer systems are being developed to help fight climate change. Theses systems will help reduce toxic emissions and use of electricity or gas.</p>
+<h3 id="smart-heating-systems">Smart Heating Systems</h3>
+<p>Smart heating systems help control the heating and turn it off when it’s not needed.</p>
+<ul>
+<li><p>Activity sensors help the system learn when you want the heating to be on or off</p></li>
+<li><p>Activity sensors also help adjust the heating in rooms if there’s unusual activity in the house - perhaps if you’re off work one day</p></li>
+<li><p>The system can also read the weather forecast to adjust the heating in advance to warm up or cool down the house</p></li>
+<li><p>Remote control apps allow you to control the heating system remotely so you can turn it on and off when you’re not at home</p></li>
+</ul>
+<p>Because the system can automatically turn the heating off when you’re not at home, this has a positive impact on the enviornment because energy isn’t being to used to unecessarily heat the house.</p>
+<h3 id="traffic-control-systems">Traffic Control Systems</h3>
+<p>Traffic control systems help manage the traffic in a city to reduce waiting times and impact on the enviornment.</p>
+<ul>
+<li><p>Adaptive traffic signals adjust timngs of their green light cycles to match the current amount of traffic. They continuously collect data about the approaching vehicles to adjust their timings</p></li>
+<li><p>Intelligent routing systems share data about different areas - like slow areas, traffic jams and road closures - and helps reduce traffic jams because of incidents, reducing toxic emissions as cars don’t have to wait.</p></li>
+</ul>
+<p>This has a positive impact on the enviornment because it reduces waiting time in queues for cars so less energy is wasted.</p>
+<h3 id="car-management-systems">Car Management Systems</h3>
+<p>Car management systems help to reduce toxic emissions from cars by smartly controlling the car.</p>
+<ul>
+<li><p>Start-stop systems turn the engine off when waiting at lights or in queues, reducing fuel consumption and emissions.</p></li>
+<li><p>Engine control units (ECU’s) use sensors to alter the engine’s air to fuel ratio to optimise fuel consumption, hence reducing carbon dioxide emissions.</p></li>
+</ul>
 <h2 id="security-risks-and-precautions">Security Risks and Precautions</h2>
 <h3 id="computer-misuse-act">Computer Misuse Act</h3>
 <p>In 1985 two hackers gained access to the email of Prince Phillip. Back then there were no laws preventing people from hacking andd the hackers were found not guilty after appealing. The Computer Misuse Act was then introduced in 1990 because of this incident and made the following a criminal offence.</p>
@@ -497,9 +523,56 @@
 <li><p>Unauthorised acts with intent to impair, or with recklessness as to impairing, operation of computer, etc</p>
 <p>Modification of data on a computer system without permission - planting viruses, deleting or modifying user’s files.</p></li>
 </ol>
-<h2 id="encryption">Encryption</h2>
+<h3 id="tracking-cookies">Tracking Cookies</h3>
+<p>Tracking cookies are a type of cookie which are used to identify users. If the cookie exists, then customized websites can sometimes be made as the user can be identified as the cookie is sent to the webserver whenever you go to visit that site.</p>
+<p>Tracking cookies may not seem important, but they do allow personal information to stored and exchanged between different websites to provide targetted advertisements to get you to buy stuff.</p>
+<h3 id="dos-attacks">DOS Attacks</h3>
+<p>A Denial of Service (DOS) attack is when an attempt to bring an online service/website offline by flooding the server so it can’t do anything else.</p>
+<h4 id="symptons-of-a-dos-attack">Symptons of a DOS Attack</h4>
+<ul>
+<li><p>The server may have very poor performance</p></li>
+<li><p>Users may be unable to access it</p></li>
+<li><p>The server may crash</p></li>
+</ul>
+<h4 id="effects-of-a-dos-attack">Effects of a DOS Attack</h4>
+<p>A Denial of Service attack will cause a lot of disruption to a company in many different ways.</p>
+<ul>
+<li><p>Customers may not be able to access the company’s website</p></li>
+<li><p>Employees may be unable to work as the servers will be down</p></li>
+<li><p>Depending on how long the servers are offline, the company could lose out on a lot of business</p></li>
+</ul>
+<h4 id="costs-of-a-dos-attack">Costs of a DOS Attack</h4>
+<p>There will be some costs with a Denial of Service attack depending on the size and length.</p>
+<ul>
+<li><p>Lost revenue due to downtime</p></li>
+<li><p>Determining the nature of the attack</p></li>
+<li><p>The payment for specialists to repair the servers after the attack</p></li>
+<li><p>Payment for cyber securtiy experts to iplement safeguards to prevent further attacks</p></li>
+<li><p>Additional admin to compensate for loss of network services</p></li>
+</ul>
+<h4 id="types-of-dos-attacks">Types of DOS Attacks</h4>
+<p>There are many different types of Denial of Service attacks that attack the server in different ways.</p>
+<ul>
+<li><p>Physical Attacks:</p>
+<p>A physical attack is when you physically cut the wires to a server or damage it so it can’t function. Physical attacks can also be performed by attacking other parts of a server infrastructure such as network routing.</p></li>
+<li><p>Bandwidth Consumption:</p>
+<p>This is probably the most common type of Denial of Service attack and is where the attacker floods the server with requests and packets of information to use up all the available band width so no other data can be sent to and from the server.</p></li>
+<li><p>Resource Starvation:</p>
+<p>Because a server doesn’t have unlimited resources, the attacker will try to use up all the processing time, memory, and storage by continuously creating new accounts or spamming an email server so it uses up all it’s space to store emails. This will cause the server to stop functioning properly as it can’t store anymore data or process anything else.</p></li>
+<li><p>DNS Attack:</p>
+<p>Whenever a url is entered into a web browser, the browser makes a request to a DNS server (Domain Name Service) to find out the IP address of that website. If an attacker was to attack a DNS server then the browser wouldn’t be able to find out the company’s IP address, so the users would be unable to visit their website. An attacker may want to hack the DNS server to replace the IP address of the company’s server with their own IP address to re-route all network requests to the company’s server to their own.</p></li>
+</ul>
+<h4 id="reasons-of-a-dns-attack">Reasons of a DNS Attack</h4>
+<ul>
+<li><p>Financial - blackmail, competitive (disrupting business competition), hired to hack the server</p></li>
+<li><p>Political - you don’t agree with the other’s side’s views</p></li>
+<li><p>Personal - you hold a grudge against a former employee, etc</p></li>
+</ul>
+<h4 id="distrobuted-dos">Distrobuted DOS</h4>
+<p>A Distributed Denial of Service is when the attacker uses a network of computers sometimes known as a botnet or a zombie army. The users of the computers participating in the attack may be unaware that they have a virus helping a DDOS attack.</p>
+<h3 id="encryption">Encryption</h3>
 <p>Encryption is when data is transformed into another form so that it is unreadable. Data must be encrypted and decrypted with a key.</p>
-<h3 id="symmetric-encryption">Symmetric Encryption</h3>
+<h4 id="symmetric-encryption">Symmetric Encryption</h4>
 <p>Symmetric encryption is when both parties have the same secret key and that key is used to both encrypt and decrypt the data.</p>
 <table>
 <colgroup>
@@ -523,7 +596,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="asymmetric-encryption">Asymmetric Encryption</h3>
+<h4 id="asymmetric-encryption">Asymmetric Encryption</h4>
 <p>Asymmetric encryption is where two keys exist. The public key and the private key. The public key can only decrypt messages sent by the private key and the private key can only decrypt messages sent by the public key because both keys are linked mathematically using very large prime numbers.</p>
 <pre><code>+----------+
 |          |
@@ -576,23 +649,64 @@
 <h3 id="digital-certificates">Digital Certificates</h3>
 <p>A digital certificate is the digital equivalent of a passport or a driving license - they are used to prove that it’s really you. Digital certificates are issued by a certification authority and contain the following information:</p>
 <ul>
-<li>Public key</li>
-<li>Owner’s name</li>
-<li>Expiration date and issuer</li>
+<li><p>Public key</p></li>
+<li><p>Owner’s name</p></li>
+<li><p>Expiration date and issuer</p></li>
 </ul>
 <h3 id="digital-signatures">Digital Signatures</h3>
 <p>A digital signature is a method of proving that a message has not been modified during transit.</p>
 <h4 id="sending-a-signature">Sending a Signature</h4>
 <ol type="1">
-<li>You obtain a message hash (a unique mathematical summary of the message)</li>
-<li>You encrypt the message hash with your private key</li>
-<li>This signature is then attached to the message</li>
+<li><p>You obtain a message hash (a unique mathematical summary of the message)</p></li>
+<li><p>You encrypt the message hash with your private key</p></li>
+<li><p>This signature is then attached to the message</p></li>
 </ol>
 <h4 id="receiving-a-signature">Receiving a Signature</h4>
 <ol type="1">
-<li>You hash the received message</li>
-<li>You decrypt the sent message hash</li>
-<li>You then compare both the message hashes and if they are the same, then the message is authentic</li>
+<li><p>You hash the received message</p></li>
+<li><p>You decrypt the sent message hash</p></li>
+<li><p>You then compare both the message hashes and if they are the same, then the message is authentic</p></li>
 </ol>
+<pre><code>+----------+
+|          |
+|  Sender  |
+|          |
++----------+
+
++------------+
+|            |
+|  Document  |
+|            |
++------------+
+    |
+    |    +----------------+
+    |---&gt;| Hash algorithm |---+
+    |    +----------------+   |
+    |                         v
+    |                   +------------+    +-------------+
+    |&lt;------------------| Encryption |&lt;---| Private key |
+    |                   +------------+    +-------------+
+    |
+    |
+    |-----------------------+
+    |                       |
+    |                       v
++----------------+    +------------+    +------------+
+| Hash algorithm |    | Decryption |&lt;---| Public key |
++----------------+    +------------+    +------------+
+    |                       | 
+    |                       |
+    v                       v
++---------------------------------+
+|                                 |
+|  If both hash&#39;s are equal then  |
+|    the document is authentic    |
+|                                 |
++---------------------------------+
++------------+
+|            |
+|  Receiver  |
+|            |
++------------+</code></pre>
 </body>
 </html>
